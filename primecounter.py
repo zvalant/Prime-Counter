@@ -3,8 +3,12 @@ def prime(number):
     for current_num in range(3,number+1,2): # for loop that goes from 3-number by increments of 2
         prime_tracker = True  # variable to keep track if number is prime/ reset tracker for new numbers
         for num in range(3,current_num): # for loop that tracks the current number in iteration
+            print(current_num)
             if current_num % num == 0: # determines if the current number is composite
                 prime_tracker = False
+                break
+            elif num > (current_num**.5):
+                break
         if prime_tracker == True: # if tracker doesnt switch during iteration add 1 to prime counter
             prime_c +=1
     return print(prime_c)
